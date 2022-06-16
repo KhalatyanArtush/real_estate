@@ -1,10 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
+    <a style="float: right; margin-right: 50px;" href="{{ route('post.index') }}">Back</a>
 
     <main role="main" data-v-0109a204>
 
+
         <section class="ListingHero" data-v-0109a204>
+
             <div class="single_left Listing-hero-image" style="height:100vh;" data-v-110938e4>
 
 
@@ -101,5 +104,4 @@
         </section>
 
     </main>
-    <a href="{{ route('admin.post.index') }}">Back</a>
 @endsection

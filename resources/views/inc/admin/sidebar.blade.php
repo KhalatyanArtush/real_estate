@@ -10,14 +10,32 @@
                 </p>
 
             </a>
-            <a href="{{ route('admin.post.index') }}" class="nav-link">
+        </li>
+        <li class="nav-item">
+
+        <a href="{{ route('admin.post.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-align-justify"></i>
                 <p>
                     Posts
-                    @if(isset( $posts)){
+                    @if(isset( $posts))
                                         <span class="badge badge-info right">{{ $posts->total() }}</span>
-                        }
+
                     @endif
+                </p>
+
+            </a>
+
+        </li>
+        <li class="nav-item">
+
+            <a href="{{ route('admin.user.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-align-justify"></i>
+                <p>
+                    User
+{{--                    @if(isset( $users))--}}
+{{--                        <span class="badge badge-info right">{{ $users->total() }}</span>--}}
+
+{{--                    @endif--}}
                 </p>
 
             </a>

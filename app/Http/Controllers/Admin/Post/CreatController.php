@@ -17,6 +17,7 @@ class CreatController extends Controller
 {
     public function __invoke()
     {
-        return view('admin.post.create');    }
+        return view('admin.post.create');
+    }
 }
 

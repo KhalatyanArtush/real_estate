@@ -8,7 +8,7 @@ use App\Http\Filters\PostFilter;
 use App\Http\Requests\Post\FilterRequest;
 use App\Models\Post;
 
-class IndexController extends BaseController
+class IndexController extends Controller
 {
    public function __invoke(FilterRequest $request)
    {

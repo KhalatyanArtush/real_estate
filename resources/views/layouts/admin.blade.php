@@ -36,13 +36,16 @@
                 <a href="{{route('admin.post.creat')}}" class="nav-link">Add Post</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{route('admin.post.creat')}}" class="nav-link">Add Home</a>
+                <a href="{{route('admin.home.creat')}}" class="nav-link">Add Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{route('admin.post.creat')}}" class="nav-link">Add Agents</a>
+                <a href="{{route('admin.agent.creat')}}" class="nav-link">Add Agents</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="{{route('admin.post.creat')}}" class="nav-link">Add About</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{route('admin.post.creat')}}" class="nav-link">Add User</a>
             </li>
 
         </ul>
