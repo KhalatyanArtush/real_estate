@@ -7,7 +7,7 @@
             <div class="indexImage" style=" padding: 10px">
 
                     <div class="HomeImg">
-                        <img src="{{ asset ('img/'.$home->img)}}" lazy="loaded">
+                        <img src="{{ asset ('Home/images/'.$home->image_path)}}" lazy="loaded">
                         <span class="homeText"> {{ $home->text}}</span>
                     </div>
 

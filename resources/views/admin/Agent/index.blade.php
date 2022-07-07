@@ -7,7 +7,7 @@
             <div class="indexImage" style=" padding: 10px">
 
                     <div class="HomeImg">
-                        <img src="{{ asset ('img/'.$agent->img)}}" lazy="loaded">
+                        <img src="{{ asset ('Agent/images/'.$agent->image_path)}}" lazy="loaded">
                         <span class="homeText"> {{ $agent->text}}</span>
                     </div>
 

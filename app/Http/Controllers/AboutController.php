@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use Illuminate\Http\Request;
-
-use App\Models\Post;
 
 use App\Http\Requests\creatRequest;
 
@@ -14,7 +13,9 @@ class AboutController extends Controller
 
 public function __invoke(){
 
-        return view('/about');
+       $abouts = About::get();
+
+       return view('about',compact('abouts'));
 
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <form action="{{route('admin.post.update', $post->id)}}" method="post">
+    <form action="{{route('admin.post.update', $post->id)}}" method="post" style="margin-top: 150px">
         @csrf
         @method('patch')
         <div class="formCreat">
@@ -78,6 +78,11 @@
         <div class="formCreat">
             <label> long
                 <input type="text" name="long" value="{{ $post->long }}">
+            </label>
+        </div>
+        <div class="formCreat">
+            <label> նկար
+                <input type="file" name="files[]" multiple>
             </label>
         </div>
         <div class="formCreat">

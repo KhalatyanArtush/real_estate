@@ -12,8 +12,8 @@
                 </ul>
             </div>
         @endif
-<div>
-        <form action="{{route('admin.post.store')}}" method="post">
+<div style="margin-top: 150px">
+        <form action="{{route('admin.post.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="formCreat">
                 <label> կոդ
@@ -96,10 +96,16 @@
                 </label>
             </div>
             <div class="formCreat">
+                <label> նկար
+                    <input type="file" name="files[]" multiple>
+                </label>
+            </div>
+            <div class="formCreat">
                 <label>
                     <input type="submit" name="creatSubmit" >
                 </label>
             </div>
+
 
         </form>
     </div>

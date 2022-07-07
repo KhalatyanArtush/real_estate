@@ -8,7 +8,6 @@ use App\Http\Requests\Post\FilterRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-use App\Models\Posts;
 
 use App\Http\Requests\creatRequest;
 

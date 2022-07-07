@@ -7,7 +7,14 @@ use App\Models\Home;
 class Service
 {
     public function store($data){
-        Home::create($data);
+
+        $newImageName = time() . '.' . $data['img']->extension();
+        $data['img']->move(public_path('Home/images'), $newImageName);
+
+        Home::create([
+            'image_path' => $newImageName,
+            'text' => $data['text'],
+        ]);
     }
 
 

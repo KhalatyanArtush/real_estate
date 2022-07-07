@@ -37,7 +37,7 @@ class FilterRequest extends FormRequest
             'room'=>'integer',
             'swimming'=>'string',
             'informations'=>'string',
-
+            'files' => 'mimes:jpg.png,jpeg'
         ];
     }
 }

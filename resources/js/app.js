@@ -8,21 +8,6 @@
 
 
 
-$(document).ready(function(){
-
-    $("#filterOpen").click(function(){
-        $("#filterHome").css("display","block");
-    });
-
-
-
-    $(".filterClose").click(function(){
-        $("#filterHome").css("display","none");
-    });
-
-
-});
-
 
 
 function initMap() {
@@ -42,7 +27,7 @@ function initMap() {
     }
     // The map, centered at Uluru
 
-    const map = new google.maps.Map(document.getElementById("map"),{
+    const map = new google.maps.Map(document.getElementById("map-container-google-1"),{
         zoom: 8,
         center: uluru,
     });

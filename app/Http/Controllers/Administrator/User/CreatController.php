@@ -1,21 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Agent;
+namespace App\Http\Controllers\Administrator\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\Agent;
-use Illuminate\Http\Request;
-
-
 use App\Http\Requests\creatRequest;
+use function view;
 
 
 class CreatController extends BaseController
 {
     public function __invoke()
     {
-        return view('admin.agent.create');
+        return view('administrator.user.create');
 
-    }
+}
 }
 

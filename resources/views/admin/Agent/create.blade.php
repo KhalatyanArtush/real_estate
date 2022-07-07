@@ -13,16 +13,21 @@
             </div>
         @endif
 <div>
-        <form action="{{route('admin.agent.store')}}" method="post">
+        <form action="{{route('admin.agent.store')}}" method="post" enctype="multipart/form-data" style="margin: 150px;">
             @csrf
             <div class="formCreat">
                 <label> նկար
-                    <input type="text" name="img">
+                    <input type="file" name="img">
                 </label>
             </div>
             <div class="formCreat">
                 <label> տեքստ
-                    <input type="text" name="text">
+                    <input type="text" name="name">
+                </label>
+            </div>
+            <div class="formCreat">
+                <label> profesia
+                    <input type="text" name="profession">
                 </label>
             </div>
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Administrator\User;
 
 use App\Http\Controllers\Controller;
-use App\Services\Admin\User\Service;
+use App\Services\Administrator\User\Service;
 
 class BaseController extends Controller
 {
@@ -12,6 +12,7 @@ class BaseController extends Controller
 
     public function __construct(Service $service)
     {
+
         $this->service = $service;
     }
 

@@ -11,4 +11,9 @@ class Post extends Model
     use HasFactory;
     use Filterable;
     protected $guarded = [];
+
+    public function users(){
+        return $this->belongsToMany(User::class,'user_posts','post_id','user_id');
+
+    }
 }

@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Administrator\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\User\StoreRequest;
-use App\Models\User;
+use App\Http\Requests\Administrator\User\StoreRequest;
+use function redirect;
 
 class StoreController extends BaseController
 {
     public function __invoke(StoreRequest $request)
     {
+
         $data = $request->validated();
 
         $this->service->store($data);
 
 
-        return redirect()->route('admin.user.index');
+        return redirect()->route('administrator.user.index');
     }
 }

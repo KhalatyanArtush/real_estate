@@ -39,6 +39,8 @@ class UpdateRequest extends FormRequest
             'informations'=>'string',
             'lat'=>'string',
             'long'=>'string',
+            'files' => 'mimes:jpg.png,jpeg'
+
         ];
     }
 }

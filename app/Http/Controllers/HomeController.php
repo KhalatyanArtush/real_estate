@@ -32,7 +32,7 @@ class HomeController extends Controller
         $posts = Post::filter($filter)->paginate(25);
 //       $post = Post::paginate(10);
 
-        return redirect()->route('admin.post.index',compact('posts','filterPosts'));
+        return redirect()->route('post.admin.index',compact('posts','filterPosts'));
 //        return view('home');
     }
 }

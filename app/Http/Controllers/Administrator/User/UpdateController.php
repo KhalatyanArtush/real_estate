@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Administrator\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\User\UpdateRequest;
+use App\Http\Requests\Administrator\User\UpdateRequest;
 use App\Models\User;
+use function redirect;
 
 class UpdateController extends BaseController
 {
@@ -14,7 +14,7 @@ class UpdateController extends BaseController
        $data= $request->validated();
        $this->service->update($user, $data);
 
-       return redirect()->route('admin.user.edit',$user->id);
+       return redirect()->route('administrator.user.edit',$user->id);
 
    }
 }

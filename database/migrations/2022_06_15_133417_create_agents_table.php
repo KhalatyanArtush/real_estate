@@ -15,8 +15,10 @@ class CreateAgentsTable extends Migration
     {
         Schema::create('agents', function (Blueprint $table) {
             $table->id();
-            $table->string('img')->nullable();
-            $table->text('text')->nullable();
+            $table->string('name')->nullable();
+            $table->string('profession')->nullable();
+            $table->string('image_path')->nullable();
+
             $table->timestamps();
         });
     }

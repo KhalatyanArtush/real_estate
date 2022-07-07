@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DownloadFileController;
+//use App\Http\Controllers\DownloadFileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +20,21 @@ Route::group(['namespace' => 'Post'], function () {
     Route::get('/post', 'IndexController')->name('post.index');
     Route::get('/post/{post}', 'ShowController')->name('post.show');
 
+});
 
+
+Route::group(['namespace' => 'Administrator', 'prefix' => 'administrator', 'middleware' => 'administrator'], function () {
+    Route::group(['namespace' => 'User'], function () {
+        Route::get('/user', 'IndexController')->name('administrator.user.index');
+        Route::get('/user/creat', 'CreatController')->name('administrator.user.creat');
+        Route::post('/user', 'StoreController')->name('administrator.user.store');
+        Route::get('/user/{user}', 'ShowController')->name('administrator.user.show');
+        Route::get('/user/{user}/edit', 'EditController')->name('administrator.user.edit');
+        Route::patch('/user/{user}', 'UpdateController')->name('administrator.user.update');
+        Route::delete('/user/{user}', 'DestroyController')->name('administrator.agent.delete');
+
+
+    });
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
@@ -43,6 +57,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
         Route::patch('/home/{home}', 'UpdateController')->name('admin.home.update');
         Route::delete('/home/{home}', 'DestroyController')->name('admin.home.delete');
 
+            Route::group(['namespace' => 'Slider', 'prefix' => 'home'], function () {
+                Route::get('/slider/index', 'IndexController')->name('admin.home.slider.index');
+                Route::get('/slider/creat', 'CreatController')->name('admin.home.slider.creat');
+                Route::post('/slider', 'StoreController')->name('admin.home.slider.store');
+                Route::get('/slider/{homeSlider}', 'ShowController')->name('admin.home.slider.show');
+                Route::get('/slider/{homeSlider}/edit', 'EditController')->name('admin.home.slider.edit');
+                Route::patch('/slider/{homeSlider}', 'UpdateController')->name('admin.home.slider.update');
+                Route::delete('/slider/{homeSlider}', 'DestroyController')->name('admin.home.slider.delete');
+            });
     });
 
     Route::group(['namespace' => 'Agent'], function () {
@@ -56,13 +79,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
 
     });
 
-    Route::group(['namespace' => 'User'], function () {
-        Route::get('/user', 'IndexController')->name('admin.user.index');
-        Route::get('/user/creat', 'CreatController')->name('admin.user.creat');
-        Route::post('/user', 'StoreController')->name('admin.user.store');
-        Route::get('/user/{user}', 'ShowController')->name('admin.user.show');
-        Route::get('/user/{user}/edit', 'EditController')->name('admin.user.edit');
-        Route::patch('/user/{user}', 'UpdateController')->name('admin.user.update');
+    Route::group(['namespace' => 'About'], function () {
+        Route::get('/about', 'IndexController')->name('admin.about.index');
+//        Route::get('/agent/creat', 'CreatController')->name('admin.agent.creat');
+//        Route::post('/agent', 'StoreController')->name('admin.agent.store');
+//        Route::get('/agent/{agent}', 'ShowController')->name('admin.agent.show');
+//        Route::get('/agent/{agent}/edit', 'EditController')->name('admin.agent.edit');
+//        Route::patch('/agent/{agent}', 'UpdateController')->name('admin.agent.update');
 //        Route::delete('/agent/{agent}', 'DestroyController')->name('admin.agent.delete');
 
     });
@@ -73,7 +96,10 @@ Route::group(['namespace' => 'Home'], function () {
     Route::get('/', 'IndexController')->name('home.index');
 
 });
+Route::group(['namespace' => 'MyPage'], function () {
+    Route::get('/mypage/{mypage}', 'UserPostController')->name('mypage');
 
+});
 
 //
 //Route::get('/', function () {
@@ -81,10 +107,11 @@ Route::group(['namespace' => 'Home'], function () {
 //})->name('index');
 
 Route::get('/agents', 'AgentController')->name('agents');
-
 Route::get('/about', 'AboutController')->name('about');
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

@@ -26,11 +26,12 @@ class CreatePostsTable extends Migration
             $table->string('building_type')->nullable();
             $table->integer('floor')->nullable();
             $table->integer('room');
-            $table->string('swimming')->nullable();
+            $table->string('swimming')->default(0);
             $table->text('informations')->nullable();
+            $table->integer('public')->default(1);
             $table->string('lat');
             $table->string('long');
-            $table->string('role')->default('users');
+            $table->string('image_path');
             $table->timestamps();
         });
     }

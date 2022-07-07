@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <form action="{{route('admin.user.update', $user->id)}}" method="post">
+    <form action="{{route('administrator.user.update', $user->id)}}" method="post">
         @csrf
         @method('patch')
         <div class="formCreat">
@@ -10,7 +10,7 @@
             </label>
         </div>
         <div class="formCreat">
-            <label> վերնագիր
+            <label> էլ. հասցե
                 <input type="email" name="email" value="{{ $user->email }}">
             </label>
         </div>
@@ -21,12 +21,7 @@
         </div>
         <div class="formCreat">
             <label> կրկնել գաղտնաբառը
-                <input type="password" name="password_confirmation"  autocomplete="new-password">                </label>
-        </div>
-
-        <div class="formCreat">
-            <label> վերնագիր
-                <input type="text" name="email" value="{{ $user->role }}">
+                <input type="password" name="password_confirmation"  autocomplete="new-password">
             </label>
         </div>
 
@@ -38,6 +33,6 @@
     </form>
 
 
-    <a href="{{ route('admin.user.index') }}">Back</a>
+    <a href="{{ route('administrator.user.index') }}">Back</a>
 @endsection
 

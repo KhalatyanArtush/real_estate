@@ -24,8 +24,9 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'img'=>'string',
-            'text'=>'string',
+            'img'=>'mimes:jpg.png,jpeg|max:5048',
+            'name'=>'string',
+            'profession'=>'string',
 
 
         ];

@@ -2,63 +2,54 @@
 
 
 @section('content')
-    <div style="font-size: 50px">Agents</div>
+    <main id="main">
 
-    <div class="agents">
-        <div class="addpInfo-agents">
-            <div class="addphotos-agents">
-                <img src="img/imagereader.webp">
-            </div>
-            <div class="addtext-agents">
-                <span class="print-agent-info">
-Ես պահանջում եմ ԴՆԹ հետազոտության անցկացնել սեւբերետավորներին, որ պարզաբանվի՝ որտեղից են բուծվել այդ էակները։ Այս մասին այսօր՝ հունիսի 4-ին, Ֆրանսիայի հրապարակում՝ «Դիմադրություն» շարժման հանրահավաքին իր ելույթում նշեց 44-օրյա պատերազմում զոհված զինծառայող Հայկազ Մկրտչյանի հայրը՝ Զավեն Մկրտչյանը, որը նախօրեին Պռոշյան-Դեմիրճյան խաչմերուկում սեւբերետավորների կողմից բռնության է ենթարկվել։
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
 
-«Պռոշյան-Դեմիրճյան խաչմերուկում հանգիստ կանգնած էի, պարզ դարձավ, որ ոստիկանական ուժերը փորձում են բախում հրահրել, զգացվեց որոշակի շարժ, ես ոչ մի գործողություն չէի կատարում։ Երբ ոստիկանները վահաններով մոտեցան մայթին, ես մայթի անկյունում կանգնած էի
-                 </span>
-            </div>
-        </div>
-    </div>
-    <div class="agents">
-        <div class="addpInfo-agents">
-            <div class="addphotos-agents">
-                <img src="img/imagereader.webp">
-            </div>
-            <div class="addtext-agents">
-                <span class="print-agent-info">
-Ես պահանջում եմ ԴՆԹ հետազոտության անցկացնել սեւբերետավորներին, որ պարզաբանվի՝ որտեղից են բուծվել այդ էակները։ Այս մասին այսօր՝ հունիսի 4-ին, Ֆրանսիայի հրապարակում՝ «Դիմադրություն» շարժման հանրահավաքին իր ելույթում նշեց 44-օրյա պատերազմում զոհված զինծառայող Հայկազ Մկրտչյանի հայրը՝ Զավեն Մկրտչյանը, որը նախօրեին Պռոշյան-Դեմիրճյան խաչմերուկում սեւբերետավորների կողմից բռնության է ենթարկվել։
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Team</h2>
 
-«Պռոշյան-Դեմիրճյան խաչմերուկում հանգիստ կանգնած էի, պարզ դարձավ, որ ոստիկանական ուժերը փորձում են բախում հրահրել, զգացվեց որոշակի շարժ, ես ոչ մի գործողություն չէի կատարում։ Երբ ոստիկանները վահաններով մոտեցան մայթին, ես մայթի անկյունում կանգնած էի
-                 </span>
-            </div>
-        </div>
-    </div>
-    <div class="agents">
-        <div class="addpInfo-agents">
-            <div class="addphotos-agents">
-                <img src="img/imagereader.webp">
-            </div>
-            <div class="addtext-agents">
-                <span class="print-agent-info">
-Ես պահանջում եմ ԴՆԹ հետազոտության անցկացնել սեւբերետավորներին, որ պարզաբանվի՝ որտեղից են բուծվել այդ էակները։ Այս մասին այսօր՝ հունիսի 4-ին, Ֆրանսիայի հրապարակում՝ «Դիմադրություն» շարժման հանրահավաքին իր ելույթում նշեց 44-օրյա պատերազմում զոհված զինծառայող Հայկազ Մկրտչյանի հայրը՝ Զավեն Մկրտչյանը, որը նախօրեին Պռոշյան-Դեմիրճյան խաչմերուկում սեւբերետավորների կողմից բռնության է ենթարկվել։
+                </div>
 
-«Պռոշյան-Դեմիրճյան խաչմերուկում հանգիստ կանգնած էի, պարզ դարձավ, որ ոստիկանական ուժերը փորձում են բախում հրահրել, զգացվեց որոշակի շարժ, ես ոչ մի գործողություն չէի կատարում։ Երբ ոստիկանները վահաններով մոտեցան մայթին, ես մայթի անկյունում կանգնած էի
-                 </span>
             </div>
-        </div>
-    </div>
-    <div class="agents">
-        <div class="addpInfo-agents">
-            <div class="addphotos-agents">
-                <img src="img/imagereader.webp">
-            </div>
-            <div class="addtext-agents">
-                <span class="print-agent-info">
-Ես պահանջում եմ ԴՆԹ հետազոտության անցկացնել սեւբերետավորներին, որ պարզաբանվի՝ որտեղից են բուծվել այդ էակները։ Այս մասին այսօր՝ հունիսի 4-ին, Ֆրանսիայի հրապարակում՝ «Դիմադրություն» շարժման հանրահավաքին իր ելույթում նշեց 44-օրյա պատերազմում զոհված զինծառայող Հայկազ Մկրտչյանի հայրը՝ Զավեն Մկրտչյանը, որը նախօրեին Պռոշյան-Դեմիրճյան խաչմերուկում սեւբերետավորների կողմից բռնության է ենթարկվել։
+        </section><!-- End Breadcrumbs -->
 
-«Պռոշյան-Դեմիրճյան խաչմերուկում հանգիստ կանգնած էի, պարզ դարձավ, որ ոստիկանական ուժերը փորձում են բախում հրահրել, զգացվեց որոշակի շարժ, ես ոչ մի գործողություն չէի կատարում։ Երբ ոստիկանները վահաններով մոտեցան մայթին, ես մայթի անկյունում կանգնած էի
-                 </span>
+        <!-- ======= Team Section ======= -->
+        <section id="team" class="team ">
+            <div class="container">
+
+                <div class="row">
+@foreach($agents as $agent)
+                    <div class="col-lg-6">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="{{'assets/img/team/'.$agent->img}}" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>{{$agent->text}}</h4>
+                                <span>Chief Executive Officer</span>
+                                <p>Explicabo voluptatem mollitia et repellat</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+                </div>
+
             </div>
-        </div>
-    </div>
+        </section><!-- End Team Section -->
+
+    </main><!-- End #main -->
+
+
+
+
+
 
 @endsection

@@ -4,9 +4,9 @@
     <form action="{{route('admin.home.update', $home->id)}}" method="post">
         @csrf
         @method('patch')
-        <div class="formCreat">
+        <div class="formCreat" style="margin-top: 100px">
             <label> կոդ
-                <input type="text" name="img" value="{{ $home->img }}">
+                <input type="file" name="image_path" value="{{ $home->img }}">
             </label>
         </div>
         <div class="formCreat">
