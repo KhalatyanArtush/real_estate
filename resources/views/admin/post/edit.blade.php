@@ -1,99 +1,242 @@
 @extends('layouts.main')
 
 @section('content')
-    <form action="{{route('admin.post.update', $post->id)}}" method="post" style="margin-top: 150px">
-        @csrf
-        @method('patch')
-        <div class="formCreat">
-            <label> կոդ
-                <input type="text" name="key" value="{{ $post->key }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> վերնագիր
-                <input type="text" name="title" value="{{ $post->title }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> գործակալ
-                <input type="text" name="agent" value="{{ $post->agent }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> գումար
-                <input type="text" name="sum" value="{{ $post->sum }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> գործողության տեսակ
-                <input type="text" name="buy_rent" value="{{ $post->buy_rent }}">
-            </label>
-        </div>
+    <div class="form-add">
+        <form action="{{route('admin.post.update', $post->id)}}" enctype="multipart/form-data" method="post">
+            @csrf
+            @method('patch')
+            <input type="hidden" name="post_id" value="{{ $post->id }}">
 
-        <div class="formCreat">
-            <label> քաղաք
-                <input type="text" name="country" value="{{ $post->country }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> փողոց
-                <input type="text" name="region" value="{{ $post->region }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> շինություն
-                <input type="text" name="type" value="{{ $post->type }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> շինությոան տեսակ
-                <input type="text" name="building_type" value="{{ $post->building_type }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> հարկ
-                <input type="text" name="floor" value="{{ $post->floor }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> սենյակ
-                <input type="text" name="room" value="{{ $post->room }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> լողավազան
-                <input type="text" name="swimming" value="{{ $post->swimming }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> մանրամասն
-                <textarea rows="10" cols="70" name="informations"> {{ $post->informations }}</textarea>
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> lat
-                <input type="text" name="lat" value="{{ $post->lat }}">
-            </label>
-        </div>'
-        <div class="formCreat">
-            <label> long
-                <input type="text" name="long" value="{{ $post->long }}">
-            </label>
-        </div>
-        <div class="formCreat">
-            <label> նկար
-                <input type="file" name="files[]" multiple>
-            </label>
-        </div>
-        <div class="formCreat">
-            <label>
-                <input type="submit" name="creatSubmit" >
-            </label>
-        </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.key')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="key"
+                           value="{{ $post->key }}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.title')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="title"
+                           value="{{ $post->title }}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.agent')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="agent_id"
+                           value="@if($post->agent_id){{ $post->agent['name'] }}@endif">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.sum')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="sum"
+                           value="{{ $post->sum }}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.buy_rent')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="buy_rent_id"
+                           value="{{ $post->buy_rent['title'] }}">
+                </div>
+            </div>
+            {{--           <div class="row mb-3">--}}
+            {{--                <label for="staticEmail" class="col-sm-2 col-form-label">busy</label>--}}
+            {{--                <div class="col-sm-10">--}}
+            {{--                    <input type="text" class="form-control" id="exampleFormControlInput1" name="busy">--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.region')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="region_id"
+                           value="@if($post->region_id){{ $post->region['title'] }}@endif">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.city')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="city_id"
+                           value="@if($post->city_id){{ $post->city['title'] }}@endif">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.district')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="district_id"
+                           value="@if($post->district_id){{ $post->district['title'] }}@endif">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.village')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="village_id"
+                           value="@if($post->village_id){{ $post->village['title'] }}@endif">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.street')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="street_id"
+                           value="@if($post->street_id){{ $post->street['title'] }}@endif">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.type')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="type_id"
+                           value="@if($post->type_id){{ $post->type['title'] }}@endif">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.building_type')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="building_type_id"
+                           value="@if($post->building_type_id){{ $post->building_type['title'] }}@endif">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.building_number')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="building_number"
+                           value="{{ $post->building_number }}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.building_apartment')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="apartament_number"
+                           value="{{ $post->apartament_number}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.floor')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="floor"
+                           value="{{ $post->floor }}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.room')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="room"
+                           value="{{ $post->room }}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.swimming')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="swimming"
+                           value="@if ($post->swimming == 1){{__('titles.available')}} @else{{__('titles.not_available')}} @endif ">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.tel')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="tel"
+                           value="{{$post->tel}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.map_city')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="map_city"
+                           value="{{$post->map_city}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.map_street')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="map_street"
+                           value="{{$post->map_street}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.map_number')}}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="map_number"
+                           value="{{$post->map_number}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="staticEmail" class="col-sm-2 col-form-label">{{__('titles.informations')}}</label>
+                <div class="col-sm-10">
+                        <textarea class="form-control" name="informations" id="exampleFormControlTextarea1"
+                                  rows="3">{{ $post->informations }}</textarea>
+                </div>
+            </div>
 
-    </form>
+            <div style="width: 14rem;">
+                <label class="form-label" for="customFile">{{ __('titles.upload_img' )}}</label>
+                <input type="file" class="form-control" id="customFile" name="files[]" multiple>
+            </div>
 
+            <div style="width: 14rem;">
+                <label class="form-label" for="customFile">{{ __('titles.upload_video' )}}</label>
+                <input type="file" class="form-control" id="customFile" name="video[]" multiple>
+            </div>
 
-    <a href="{{ route('admin.post.index') }}">Back</a>
+            <div class="row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">{{ __('buttons.Edit' )}}</button>
+                </div>
+            </div>
+
+        </form>
+        <form action="{{ route('admin.video.delete') }}" method="post">
+            @csrf
+            @method('delete')
+            @foreach($post->video as $video)
+                <input name="video_id" type="hidden" value="{{$video->id}}">
+
+                <div>
+                    <video style="display: inline-block; width: 250px; padding-bottom: 20px; padding-top: 20px"  autoplay muted controls>
+                        <source src="{{asset('Post/video/'.$video->name)}}"
+                                type="video/mp4">
+                    </video>
+                    <button type="submit" class="btn btn-outline-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-trash" viewBox="0 0 16 16">
+                            <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                        </svg>
+                        {{ __('buttons.Delete' )}}
+                    </button>
+                </div>
+            @endforeach
+        </form>
+        <form action="{{ route('admin.file.delete') }}" method="post">
+                @csrf
+                @method('delete')
+            @foreach($post->files as $file)
+
+                <div style="display: inline-block; width: 250px">
+                    <div style="width: 14rem; padding-bottom: 20px; padding-top: 20px">
+                        <label class="form-label " for="customFile"> </label>
+                        <img src="{{asset('Post/img/'.$file->name)}}" alt="" class="img-fluid">
+                        <input name="image_id" type="hidden" value="{{$file->id}}">
+
+                        <button type="submit" class="btn btn-outline-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-trash" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                                <path fill-rule="evenodd"
+                                      d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                            </svg>
+                            {{ __('buttons.Delete' )}}
+                        </button>
+                    </div>
+                </div>
+
+            @endforeach
+        </form>
+        <button class="btn btn-primary"><a id="back-from-page" href="{{ route('admin.post.index') }}">Back</a></button>
+    </div>
+
 @endsection
 

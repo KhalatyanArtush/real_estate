@@ -17,7 +17,11 @@ class CreateAgentsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('profession')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
             $table->string('image_path')->nullable();
+            $table->string('stock')->nullable();
 
             $table->timestamps();
         });

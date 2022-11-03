@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'img'=>'string',
+            'img'=>'mimes:jpg,png,jpeg|max:5048',
             'text'=>'string',
         ];
     }

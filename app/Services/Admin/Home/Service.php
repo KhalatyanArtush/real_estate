@@ -3,6 +3,7 @@
 namespace App\Services\Admin\Home;
 
 use App\Models\Home;
+use function public_path;
 
 class Service
 {
@@ -19,7 +20,18 @@ class Service
 
 
     public function update($home, $data){
-        $home->update($data);
 
+        if (isset($data['img'])){
+        $newImageName = time() . '.' . $data['img']->extension();
+        $data['img']->move(public_path('Home/images'), $newImageName);
+
+        $home->update([
+            'image_path' => $newImageName,
+            'text' => $data['text'],
+
+        ]);
+        } else {
+            $home->update($data);
+        }
     }
 }

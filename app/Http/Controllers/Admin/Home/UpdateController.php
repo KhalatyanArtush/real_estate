@@ -13,7 +13,7 @@ class UpdateController extends BaseController
        $data= $request->validated();
        $this->service->update($home, $data);
 
-       return redirect()->route('admin.home.edit',$home->id);
+       return redirect()->route('admin.home.show',$home->id);
 
    }
 }

@@ -24,8 +24,13 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'img'=>'string',
-            'text'=>'string',
+            'name'=>'string',
+            'profession'=>'string',
+            'twitter'=>'string',
+            'facebook'=>'string',
+            'instagram'=>'string',
+            'img'=>'mimes:jpg,png,jpeg|max:5048',
+
         ];
     }
 }

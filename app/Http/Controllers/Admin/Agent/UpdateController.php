@@ -17,8 +17,9 @@ class UpdateController extends BaseController
     {
         $data = $request->validated();
 
+
         $this->service->update($agent, $data);
-        return redirect()->route('admin.agent.edit',$agent->id);
+        return redirect()->route('admin.agent.show',$agent->id);
 
     }
 }

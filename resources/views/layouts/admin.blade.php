@@ -1,45 +1,45 @@
 @include('layouts.header')
 
-<div class="os-padding">
+{{--<div class="os-padding">--}}
 <!-- Sidebar Menu -->
+{{--        @include('inc.admin.sidebar')--}}
+
+    <div class="wrapper">
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary " style="z-index: 0;">
+            <!-- Brand Logo -->
+                <span class="brand-link font-weight-light">Admin Panel</span>
+
+            <!-- Sidebar -->
         @include('inc.admin.sidebar')
 
+        <!-- /.sidebar -->
+        </aside>
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard v2</h1>
-                    </div><!-- /.col -->
 
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="background-color: rgb(67 74 82);">
+            <!-- Content Header (Page header) -->
+
+            <!-- Main content -->
+            <section class="content" style="margin-top: 100px">
+                <div class="container-fluid">
+
+                </div><!--/. container-fluid -->
+            </section>
+            <!-- /.content -->
         </div>
+        <!-- /.content-wrapper -->
 
-
-
-
-
-    <!-- /.content-header -->
-
-        <!-- Main content -->
-
-    @yield('content')
-
-    <!-- /.content -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
-    <!-- /.content-wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
 
-</div>
-<!-- ./wrapper -->
+
 
 @include('layouts.footer')

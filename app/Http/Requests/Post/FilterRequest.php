@@ -26,18 +26,21 @@ class FilterRequest extends FormRequest
         return [
             'key'=>'string',
             'title'=>'string',
-            'agent'=>'string',
-            'sum'=>'integer',
-            'buy_rent'=>'string',
-            'country'=>'string',
-            'region'=>'string',
-            'type'=>'string',
-            'building_type'=>'string',
+            'agent_id'=>'integer',
+            'sum'=>[
+                'firstSum'=>'integer',
+                'endSum'=>'integer'
+            ],
+            'buy_rent_id'=>'integer',
+            'city_id'=>'integer',
+            'region_id'=>'integer',
+            'type_id'=>'integer',
+            'building_type_id'=>'integer',
             'floor'=>'integer',
             'room'=>'integer',
             'swimming'=>'string',
             'informations'=>'string',
-            'files' => 'mimes:jpg.png,jpeg'
+//            'files' => 'mimes:jpg,png,jpeg'
         ];
     }
 }

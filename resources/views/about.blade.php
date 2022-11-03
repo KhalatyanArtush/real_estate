@@ -9,7 +9,7 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>About</h2>
+                    <h2>{{__('titles.about')}}</h2>
 
                 </div>
 
@@ -19,50 +19,53 @@
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
             <div class="container">
-@foreach($abouts as $about)
-                <div class="row content">
-                    <div class="col-lg-6">
-                        <h2>{{$about->general}}</h2>
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
+
+                    <div class="row content">
+                        <div class="pic"><img src="{{ asset ('About/images/'.$about->image_path)}}" class="img-fluid"
+                                              alt=""></div>
+
+                        <div class="col-lg-6">
+                            <h2>{{$about->title}}</h2>
+
                         <p>
                             {{$about->text}}
                         </p>
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0">
+
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
+                                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                @endforeach
             </div>
         </section><!-- End About Section -->
 
         <!-- ======= Team Section ======= -->
 
     </main><!-- End #main -->
-{{--                                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29001.37866792867!2d44.50573487783242!3d40.178034988508564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1650894840239!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
+    {{--                                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29001.37866792867!2d44.50573487783242!3d40.178034988508564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1650894840239!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
 
-<!--The div element for the map -->
+    <!--The div element for the map -->
 
     <!--Google map-->
-    <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-        <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                style="border:0" allowfullscreen></iframe>
+    <div>
+        <div class="mapouter">
+            <div>
+                <iframe style="border:0; width: 100%; height: 500px;"
+                        src="https://maps.google.com/maps?q={{$address->city}}%20{{$address->street}}%20%20{{$address->number}}&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <style>.gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 610px;
+                        width: 1080px;
+                    }</style>
+            </div>
+        </div>
+
     </div>
-
-    <!--Google Maps-->
-    <div id="map"></div>
-
-    <!--
-     The `defer` attribute causes the callback to execute after the full HTML
-     document has been parsed. For non-blocking uses, avoiding race conditions,
-     and consistent behavior across browsers, consider loading using Promises
-     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initMap&v=weekly"
-        defer
-    >
-
-    </script>
-
-
 
 @endsection

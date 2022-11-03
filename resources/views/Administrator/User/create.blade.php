@@ -13,16 +13,18 @@
             </div>
         @endif
 <div>
-        <form action="{{route('administrator.user.store')}}" method="post">
+    <div class="form-add">
+
+    <form action="{{route('administrator.user.store')}}" method="post">
             @csrf
 
 
 
-            <div class="formCreat">
                 <div class="row mb-3">
-                    <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('անուն') }}</label>
 
-                    <div class="col-md-6">
+                    <label for="name" class="col-sm-2 col-form-label">{{ __('անուն') }}</label>
+
+                    <div class="col-sm-10">
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                         @error('name')
@@ -31,14 +33,12 @@
                                     </span>
                         @enderror
                     </div>
-                </div>
 
             </div>
-            <div class="formCreat">
                 <div class="row mb-3">
-                    <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('էլ. հասցե') }}</label>
+                    <label for="email" class="col-sm-2 col-form-label">{{ __('էլ. հասցե') }}</label>
 
-                    <div class="col-md-6">
+                    <div class="col-sm-10">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                         @error('email')
@@ -47,16 +47,14 @@
                                     </span>
                         @enderror
                     </div>
-                </div>
 
             </div>
 
 
-            <div class="formCreat">
                 <div class="row mb-3">
-                    <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('գաղտնաբառ') }}</label>
+                    <label for="password" class="col-sm-2 col-form-label">{{ __('գաղտնաբառ') }}</label>
 
-                    <div class="col-md-6">
+                    <div class="col-sm-10">
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                         @error('password')
@@ -65,27 +63,21 @@
                                     </span>
                         @enderror
                     </div>
-                </div>
 
             </div>
-            <div class="formCreat">
 
                 <div class="row mb-3">
-                    <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('կրկնել գաղտնաբառը') }}</label>
+                    <label for="password-confirm" class="col-sm-2 col-form-label">{{ __('կրկնել գաղտնաբառը') }}</label>
 
-                    <div class="col-md-6">
+                    <div class="col-sm-10">
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                 </div>
 
-            </div>
-
-            <div class="formCreat">
-                <div class="formCreat">
                     <div class="row mb-3">
-                        <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('դեր') }}</label>
+                        <label for="role" class="col-sm-2 col-form-label">{{ __('դեր') }}</label>
 
-                        <div class="col-md-6">
+                        <div class="col-sm-10">
                             <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
 
                             @error('role')
@@ -94,15 +86,14 @@
                                     </span>
                             @enderror
                         </div>
-                    </div>
 
                 </div>
-
+        <div class="row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary"> գրանցել</button>
             </div>
+        </div>
 
-            <button type="submit" >
-                գրանցել
-            </button>
         </form>
     </div>
 @endsection

@@ -7,9 +7,9 @@ use App\Models\Home;
 
 class DestroyController extends BaseController
 {
-   public function __invoke(Home $homes)
+   public function __invoke(Home $home)
    {
-       $homes->delete();
+       $home->delete();
        return redirect()->route('admin.home.index');
 
    }

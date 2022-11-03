@@ -5,13 +5,13 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-info">
-                        <h3>Sailor</h3>
-                        <p>
-                            A108 Adam Street <br>
-                            NY 535022, USA<br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
+                        <h3>Strong</h3>
+                        <post>
+                            <strong>{{ __('footer.Address') }}:</strong> <br>
+                            @foreach($contacts as $contact){{$contact->address}}<br>@endforeach
+                            <strong>{{ __('footer.Phone') }}:</strong> <br>@foreach($contacts as $contact){{$contact->tel}}<br>@endforeach
+                            <strong>{{ __('footer.Email') }}:</strong><br> @foreach($contacts as $contact){{$contact->email}}<br>@endforeach
+                        </post>
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                             <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -23,32 +23,29 @@
                 </div>
 
                 <div class="col-lg-2 col-md-6 footer-links">
-                    <h4>Useful Links</h4>
+                    <h4>{{ __('footer.Useful Links') }}</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        <li><a class="bx bx-chevron-right" href="{{ route('post.index') }}">{{ __('header.Posts') }}</a></li>
+                        <li><a class="bx bx-chevron-right" href="{{ route ('agents') }}">{{ __('header.Team') }}</a></li>
+                        <li><a class="bx bx-chevron-right" href="{{ route ('about') }}">{{ __('header.About') }}</a></li>
+                        <li><a class="bx bx-chevron-right" href="{{ route ('contacts') }}">{{ __('header.Contact') }}</a></li>
+
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Our Services</h4>
+                    <h4>{{ __('footer.Our Services') }}</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        @foreach($ourServises as $ourServise)
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">{{ $ourServise->title }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
 
                 <div class="col-lg-4 col-md-6 footer-newsletter">
-                    <h4>Our Newsletter</h4>
-                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    <h4>{{ __('footer.Email') }}</h4>
                     <form action="" method="post">
-                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                        <input type="email" name="email"><input type="submit" value="{{ __('footer.Subscribe') }}">
                     </form>
 
                 </div>
@@ -57,9 +54,11 @@
         </div>
     </div>
 
+{{--    վեռանօռօգւմ--}}
+
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>Sailor</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>Strong</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->
@@ -73,36 +72,45 @@
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery Mapael -->
+
 <!-- Vendor JS Files -->
 <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
 <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
 <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('assets/vendor/waypoints/noframework.waypoints.js">')}}</script>
+<script src="{{asset('assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
 <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
 
 <!-- Template Main JS File -->
 <script src="{{asset('assets/js/main.js')}}"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- REQUIRED SCRIPTS -->
-<!-- jQuery -->
-<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap -->
-{{--<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>--}}
-<!-- overlayScrollbars -->
-<script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('dist/js/adminlte.js')}}"></script>
-
-<!-- PAGE PLUGINS -->
-<!-- jQuery Mapael -->
 <script src="{{asset('plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
 <script src="{{asset('plugins/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
+
+{{--    for admin panel--}}
+
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- overlayScrollbars -->
+<script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('dist/js/adminlte.js')}}"></script>
+
+<!-- PAGE PLUGINS -->
+
+<!-- AdminLTE for demo purposes -->
+{{--<script src="{{asset('dist/js/demo.js')}}"></script>--}}
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+{{--<script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>--}}
+
+<!-- AdminLTE App -->
 
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
