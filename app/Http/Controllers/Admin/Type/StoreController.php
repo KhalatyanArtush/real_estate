@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Controllers\Admin\Type;
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Type\StoreRequest;
+use App\Models\BuildingType;
+use App\Models\Town;
+
+class StoreController extends BaseController
+{
+   public function __invoke(StoreRequest $request)
+   {
+//       $newImageName = time() . '.' . $request->img->extension();
+//
+//       $request->img->move(public_path('Home/images'), $newImageName);
+
+       $data = $request->validated();
+   $this->service->store($data);
+
+
+       return redirect()->route('admin.type.index');
+   }
+}
