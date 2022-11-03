@@ -1,0 +1,1 @@
+{{ $videos->post->title  }}

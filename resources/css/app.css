@@ -1,0 +1,64 @@
+.header_login{
+    position: absolute;
+    top: -25px;
+    right: -200px;
+    width: 10px;
+    height: 100px;
+}
+
+.form-add{
+    padding: 150px 150px 20px 150px;
+}
+
+
+
+#back-from-page{
+
+    color: #fff;
+
+}
+
+#back-from-page hover{
+    color: #fff;
+}
+
+
+/*for favorite button */
+
+.fa {
+    font-size: 27px;
+    cursor: pointer;
+    user-select: none;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.fav-button{
+    border:none;
+    height:37px;
+    width:120px;
+    font-size:15px;
+    background-color:#000;
+    color:#fff;
+    border-radius:5px;
+    cursor:pointer;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+}
+/*for favorite button */
+
+
+/*for img abouts */
+#about .container .row .pic{
+    padding-bottom: 50px;
+
+}
+
+/*for img abouts */
+
+.edit-img{
+    padding-bottom: 10px;
+
+}
